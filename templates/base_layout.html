@@ -1,0 +1,75 @@
+{% load static from static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HealthCareErp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome/brand.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome/solid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom/auth.css' %}">
+</head>
+
+<body>
+    <header class="wrapper">
+
+        <nav class="cyan darken-2">
+            <div class="nav-wrapper container">
+                <a href="/"> <b>HEALTH CARE ERP</b></a>
+
+                <ul id="nav-mobile" class="right">
+                    {% if user.is_authenticated %}
+                    <li>Hello, {{ request.user.username }} </li>
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button class="btn z-depth-3" type="submit">Logout</button>
+                        </form>
+                    </li>
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'accounts:requests' %}">User Requests</a></li>
+                    {% endif %}
+                    {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+
+    </header>
+    <div class="wrapper container mt-5">
+        {% block heading %}
+          
+        {% endblock heading %}
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+
+    <script src="{% static 'js/jquery/jquery-3.5.1.slim.min.js' %}"></script>
+<script src="{% static 'js/jquery/jquery-1.10.2.js' %}"></script>
+<script src="{% static 'js/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootstrap/boostrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/custom/login.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.getElementsByTagName("input")[document.getElementsByTagName("input").length - 1].classList.add("btn");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{% extends "base_layout.html" %}
+
+{% block heading %}
+  <h2 class="display-4 text-center">Job Application Details</h2>
+{% endblock heading %}
+
+{% block content %}
+  
+<div class="row">
+    <div class="col-12 mt-3">
+        <div class="card mb-4">
+            <div class="card-body ml-35">
+                <h2 class="card-title">Full Name: {{ application.applicant_name }}</h2>
+                <p class="card-text text-muted h6"><b>Position Applied : </b>{{ application.position }}, <b>Applied On: </b>{{ application.date_submitted }}</p>
+                <p class="card-text"><b>Leave Reason: </b>{{ application.applicant_phone }}</p>
+                <p class="card-text"><b>Leave Reason: </b>{{ application.applicant_email }}</p>
+                <p class="card-text"><b>Highest Education: </b>{{ application.highest_education_level }}</p>
+                <p class="card-text"><b>Education Specialization: </b>{{ application.education_specialization }}</p>
+                <p class="card-text"><b>Address: </b>{{ application.postal_code }}, {{ application.zip_code }}</p>
+                <p class="card-text"><b>Residence: </b>{{ application.city }}, {{ application.country }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

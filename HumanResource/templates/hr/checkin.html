@@ -1,0 +1,26 @@
+{% extends "base_layout.html" %}
+{% block heading %}
+    <h3 class="display-4 text-center">Employees Daily Attendance Register</h3>
+{% endblock heading %}
+
+ {% block content %}
+ 
+ <table class="table table-borderless">
+     <thead class="border-bottom font-weight-bold">
+         <tr>
+             <td>Employee Name</td>
+             <td>Check-in Time</td>
+             <td>Employee Details</td>
+         </tr>
+     </thead>
+     <tbody>
+         {% for attendance in attendances%}
+            <tr>
+                <td>{{ attendance.employee }}</td>
+                <td>{{ attendance.check_in_time }}</td>
+                <td><a href="#" class="btn btn-success">View Details!</a></td>
+            </tr>
+         {% endfor %}
+     </tbody>
+ </table>
+{% endblock %}

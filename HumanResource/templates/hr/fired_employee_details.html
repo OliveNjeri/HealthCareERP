@@ -1,0 +1,30 @@
+{% extends "base_layout.html" %}
+<style>
+    html {
+        background-color: aqua;
+    }
+    content {
+        background: aquamarine;
+    }
+</style>
+
+{% block heading %}
+    <h1 class="display-4 text-center">Employee Details</h1>
+{% endblock heading %}
+
+{% block content %}
+<div class="row">
+    <!--Blog Enteries-->
+    <div class="col-6 mt-3">
+        <div class="card mb-4">
+            <div class="card-body ml-35">
+                <h2 class="card-title">{{ fired_employee.employee_name }}</h2>
+                <p class="card-text text-muted h6"><b>Employed On: </b>{{ fire_demployee.employment_date }}, <b>Date Fired: </b>{{ fired_employee.firing_date }}</p>
+                <p class="card-text"><b>Position Worked: </b>{{ fired_employee.position_worked}}</p>
+                <p class="card-text"><b>Firing Reason: </b>{{ fired_employee.firing_reason}}</p>
+                <p class="card-text"><b>Fired Employee Comment: </b>{{ fired_employee.employee_comment}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

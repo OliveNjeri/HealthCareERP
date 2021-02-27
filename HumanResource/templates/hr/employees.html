@@ -1,0 +1,30 @@
+{% extends "base_layout.html" %}
+{% block heading %}
+    <h1 class="display-4 text-center">Employees List</h1>
+{% endblock heading %}
+
+ {% block content %}
+ 
+ <table class="table table-borderless">
+     <thead class="border-bottom font-weight-bold">
+         <tr>
+             <td>Full Name</td>
+             <td>Employment Number</td>
+             <td>Department</td>
+             <td>Date Employed</td>
+             <td>Employee Details</td>
+         </tr>
+     </thead>
+     <tbody>
+         {% for employee in employee_list %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.employment_number }}</td>
+                <td>{{ employee.department }}</td>
+                <td>{{ employee.employment_date }}</td>
+                <td><a href="{% url 'employee_details' employee.id %}" class="btn btn-success">View Details!</a></td>
+            </tr>
+         {% endfor %}
+     </tbody>
+ </table>
+{% endblock %}

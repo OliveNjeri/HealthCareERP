@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/custom/auth.css' %}">
+    <link rel="stylesheet" href="{% static 'js/fontawesome-free/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'js/fontawesome-free/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'js/fontawesome-free/css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'js/fontawesome-free/css/solid.css' %}">
+    
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<h1 id="header"></h1>  
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box"> 
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-google"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a>
+            </div>
+            <form action="login" class="input-group" id="login">
+                {% csrf_token %}
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form action="register" class="input-group" id="register">
+                {% csrf_token %}
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="email" class="input-field" placeholder="Email Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Agree to terms</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/custom/login.js' %}"></script>
+    <script src="{% static 'js/fontawesome-free/js/all.js' %}"></script>
+    <script src="{% static 'js/fontawesome-free/js/brands.js' %}"></script>
+    <script src="{% static 'js/fontawesome-free/js/solid.js' %}"></script>
+    <script src="{% static 'js/fontawesome-free/js/fontawesome.js' %}"></script>
+    
+</body>
+</html>

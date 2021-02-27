@@ -1,0 +1,23 @@
+
+{% extends "base_layout.html" %}
+{% block heading %}
+    <h1 class="display-4 text-center">Employee Checkout Details</h1>
+{% endblock heading %}
+
+ {% block content %}
+ 
+ <table class="table table-borderless">
+     <thead class="border-bottom font-weight-bold">
+         <tr>
+             <td>Employee Name</td>
+             <td>Checkout Time</td>
+         </tr>
+     </thead>
+     <tbody>
+            <tr>
+                <td>{{ employee_checkout.employee }}</td>
+                <td>{{ employee_checkout.check_out_time }}</td>
+            </tr>
+     </tbody>
+ </table>
+{% endblock %}

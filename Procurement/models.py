@@ -35,7 +35,7 @@ class Purchase(models.Model):
     total_price = models.FloatField()
 
     def __str__(self):
-        return self.item 
+        return self.item + " " + str(self.total_price)
 
 class Supply(models.Model):
     purchase = models.ForeignKey(Purchase, on_delete=models.CASCADE)

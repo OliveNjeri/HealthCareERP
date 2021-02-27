@@ -1,0 +1,30 @@
+{% extends "base_layout.html" %}
+{% block heading %}
+    <h1 class="display-4 text-center">Appointments</h1>
+{% endblock heading %}
+
+ {% block content %}
+ 
+ <table class="table table-borderless">
+     <thead class="border-bottom font-weight-bold">
+         <tr>
+             <td>Full Name</td>
+             <td>Appointment Title</td>
+             <td>Description</td>
+             <td>Requested Date</td>
+             <td>Approved</td>
+         </tr>
+     </thead>
+     <tbody>
+         {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.requested_by }}</td>
+                <td>{{ appointment.appointment_title }}</td>
+                <td>{{ appointment.description }}</td>
+                <td>{{ appointment.appointment_request_date }}</td>
+                <td>{{ appointment.approved }}</td>
+            </tr>
+         {% endfor %}
+     </tbody>
+ </table>
+{% endblock %}

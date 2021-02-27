@@ -1,0 +1,51 @@
+{% extends "base_layout.html" %}
+<style>
+    html {
+        background-color: aqua;
+    }
+    content {
+        background: aquamarine;
+    }
+</style>
+
+{% block heading %}
+    <h1 class="display-4 text-center">Employee Details</h1>
+{% endblock heading %}
+
+{% block content %}
+<div class="row">
+    <!--Blog Enteries-->
+    <div class="col-6 mt-3">
+            <div class="card mb-4" style="width: 30rem;">
+                <img class="card-top-img" src="{{ employee.profile_photo.url}}" alt="">
+            </div>
+         </div>
+    <div class="col-6 mt-3">
+        <div class="card mb-4">
+            <div class="card-body ml-35">
+                <h2 class="card-title">{{ employee.name }}</h2>
+                <p class="card-text text-muted h6"><b>Emp. No: </b>{{ employee.employment_number }}, <b>Employed On: </b>{{ employee.employment_date }}</p>
+                <p class="card-text"><b>Phone Number: </b>{{ employee.phone}}</p>
+                <p class="card-text"><b>Email: </b>{{ employee.email}}</p>
+                <p class="card-text"><b>Gender: </b>{{ employee.gender}}</p>
+                <p class="card-text"><b>Department: </b>{{ employee.department}}</p>
+                <p class="card-text"><b>D.O.B: </b>{{ employee.date_of_birth}}</p>
+                <p class="card-text"><b>Religion: </b>{{ employee.religion}}</p>
+                <p class="card-text"><b>Address: </b>{{ employee.address}}</p>
+                <p class="card-text"><b>City: </b>{{ employee.city}}</p>
+                <p class="card-text"><b>Country: </b>{{ employee.country}}</p>
+                <p class="card-text"><b>Nationality: </b>{{ employee.nationality}}</p>
+                <p class="card-text"><b>Description: </b>{{ employee.personal_description}}</p>
+                <p class="card-text"><b>Height: </b>{{ employee.height}}</p>
+                <p class="card-text"><b>Skin Color: </b>{{ employee.skin_color}}</p>
+                <p class="card-text"><b>Hair Color: </b>{{ employee.hair_color}}</p>
+                <p class="card-text"><b>Last University: </b>{{ employee.last_university_attended}}</p>
+                <p class="card-text"><b>Highest Education Level: </b>{{ employee.highest_education_level}}</p>
+                <p class="card-text"><b>Graduation Year: </b>{{ employee.graduation_year}}</p>
+                <p class="card-text"><b>Specialization: </b>{{ employee.specialization}}</p>
+                <p class="card-text"><b>Places Worked: </b>{{ employee.places_worked}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
